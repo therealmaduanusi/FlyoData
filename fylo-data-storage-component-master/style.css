@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&family=Inter:wght@900&family=Karla:wght@600&family=Lexend+Deca:wght@100&family=Poppins:wght@200&family=Raleway:wght@500&family=Red+Hat+Display:wght@300;800&family=Vujahday+Script&display=swap');
+/* CSS RESET */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+/* make img easy to work with */
+img{
+    max-width: 100%;
+    display: block;
+}
+
+
+/* default */
+:root{
+    --neutal-pale-blue: hsl(243, 100%, 93%);
+    --neutal-grayish-blue: hsl(229, 7%, 55%);
+    --neutal-dark-blue: hsl(228, 56%, 26%);
+    --neutal-veryDark-blue: hsl(229, 57%, 11%);
+
+    /* gradient */
+    --crl-gradient-light: rgb(238, 178, 178);
+    --crl-gradient-dark: rgb(243, 124, 124);
+
+    /* fonts */
+    --fw-light: 400;
+    --fw-bold: 700;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.875rem;
+    background: var(--neutal-veryDark-blue) url(images/bg-mobile.png) no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.6rem;
+    gap: 1rem;
+    position: relative;
+    min-height: 100vh;
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Main content */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    width: 100%;
+}
+
+.section{
+    background-color: var(--neutal-dark-blue);
+    padding: 30px;
+    width: 100%;
+    border-radius: 10px;
+    bottom: 40px;
+    position: relative;
+}
+
+/* Main section */
+.logo-subHeadings{
+    display: flex;
+    align-items: baseline;
+    margin-top: 30px;
+}
+.logo{
+    background-color: var(--neutal-veryDark-blue);
+    margin: 0 20px 0 0;
+    border-radius: 10px;
+    padding: 15px;
+}
+.logo:hover{
+    background-color: #e494a1;
+}
+
+/* section sub */
+.sub-section{
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+.data-text{
+    color: var(--neutal-grayish-blue);
+}
+.text-gb{
+    color: #fff;
+}
+.total-range{
+    width: 100%;
+    height: 1rem;
+    border-radius: 10px;
+    margin-top: 10px;
+    background-color: var(--neutal-veryDark-blue);
+}
+.range{
+    width: 75%;
+    margin: 2px 2px 0;
+    border-radius: 10px;
+    height: 0.7rem;
+    background: linear-gradient(
+        to right, 
+        var(--crl-gradient-light), 
+        var(--crl-gradient-dark)
+    );
+    display: flex;
+    justify-content: end;
+    padding: 1.5px 2px 12px 0;
+}
+/* Pointed cirle of then range */
+.circle{
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.data-left{
+    position: relative;
+    top: 60px;
+    height: 50px;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    color: #000;
+    border-radius: 10px;
+}
+.number{
+    font-weight: var(--fw-bold);
+}
+.GB{
+    color: var(--neutal-grayish-blue);
+    font-size: 10px;
+    position: relative;
+    left: 5px;
+    bottom: 4px;
+}
+/* make 0-1000GB have space between them */
+.range-text{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* meadia query */
+@media (min-width: 65em) {
+    body {
+        background: var(--neutal-veryDark-blue) url("images/bg-desktop.png") no-repeat bottom;
+        background-size: contain;
+    }
+
+    main {
+        flex-direction: row;
+        gap: 1.67rem;
+        width: 70%;
+    }
+    .main-section{
+        width: 35%;
+    }
+
+    .data-left{
+        position: absolute;
+        width: 30%;
+        left: 60%;
+        top: -14%;
+        font-size: 1.5rem;
+    }
+    .data-left::after{
+        content: " ";
+        position: relative;
+        display: inline-block;
+        left: 27.7%;
+        background-color: rgb(255, 255, 255);
+        width: 3rem;
+        height: 2.5rem;
+        clip-path: polygon(100% 0, 0 0, 100% 100%);
+    }
+    .sub-section{
+        padding-top: 50px;
+        padding-bottom: 70px;
+        width: 50%;
+    }
+
+    /* changing the order of sub section */
+    .data-text{
+        order: 2;
+    }
+    .total-range{
+        order: 3;
+        margin-top: 20px;
+    }
+    .data-left{
+        order: 1;
+        height: 60px;
+    }
+
+    
+}
+
+@media(min-width:20em){
+    .main-section{
+        border-top-right-radius: 100px;
+        background-color: var(--neutal-dark-blue);
+    } 
+}
+
+
+@media(max-width: 376px){
+    .main-section{
+        margin-bottom: 30px;
+    } 
+}
+
